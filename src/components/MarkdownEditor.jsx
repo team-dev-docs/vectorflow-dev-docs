@@ -31,6 +31,7 @@ import Accordion from "./Accordion";
 import Tabs from "./Tabs";
 import Heading from "@tiptap/extension-heading"
 
+
 const HeadingWithID = Heading.extend({
   addAttributes() {
     return {
