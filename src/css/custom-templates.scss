@@ -791,3 +791,23 @@ th {
     background-position: right center; /* change the direction of the change here */
     color: #fff;
   }
+
+  .code-block {
+    position: relative;
+  }
+  
+  .copy-btn {
+    position: absolute;
+    top: 5px;  /* Adjust as needed */
+    right: 5px;  /* Adjust as needed */
+    background: transparent;
+    padding: 5px;
+    cursor: pointer;
+    border: none;
+    color: rgb(234, 224, 224)  /* Adjust the color as needed */
+  }
+  
+  .copy-btn:hover {
+    opacity: 0.7;  /* Give a hover effect if you'd like */
+  }
+  

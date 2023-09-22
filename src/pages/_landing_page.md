@@ -5,8 +5,8 @@
 
 ## ++{style="text-align: center; "} We provide robust, scalable, and secure vector embedding services for AI companies. Focus on your core business logic and let us handle the data ingestion.
 
-[Get Started](/docs)++{style="null" class="btn-grad"}
-[Website](https://www.getvectorflow.com)++{style="null" class="btn-grad"}
+[Get Started](/docs)++{style="null;" class="btn-grad"}
+[Website](https://www.getvectorflow.com)++{style="null;" class="btn-grad"}
 
 
 --{card}--
@@ -18,7 +18,7 @@
 
 ## Jump into the Docs
 
-[Docs](/docs)++{style="null" class="btn-grad"}
+[Docs](/docs)++{style="null;" class="btn-grad"}
 
 --{card}--
 
@@ -27,7 +27,7 @@
 
 ## Follow the contribution guide
 
-[Contribute](https://google.com)++{style="null" class="btn-grad"}
+[Contribute](https://google.com)++{style="null;" class="btn-grad"}
 
 --{card}--
 
@@ -36,7 +36,7 @@
 
 ## Book time to get a demo from one of our founding team members.
 
-[Book a Demo](https://www.getvectorflow.com/book)++{style="null" class="btn-grad"}
+[Book a Demo](https://www.getvectorflow.com/book)++{style="null;" class="btn-grad"}
 
 --{card}--
 
