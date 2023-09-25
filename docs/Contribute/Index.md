@@ -1,7 +1,6 @@
 ---
 title: "Contribute"
-sidebar_position: 10
-slug: "/contribute"
+sidebar_position: 2
 ---
 
 ````markdown
