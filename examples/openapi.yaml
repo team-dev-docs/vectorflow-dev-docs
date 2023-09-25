@@ -1,0 +1,71 @@
+openapi: 3.0.0
+info:
+  title: dev-docs
+  version: 1.0.0
+servers:
+  - url: http://localhost:3000
+paths:
+  /embed:
+    post:
+      tags:
+        - General
+      summary: Embeds
+      description: Embeds
+      requestBody:
+        content:
+          '*/*':
+            schema:
+              type: string
+              example: >-
+                "{\n\t\"VectorDBMetadata\": {},\n\t\"EmbeddingsMetadata\":
+                {},\n\t\"SourceData\": \"binary file string\"\n}"
+      parameters:
+        - name: Authorization
+          in: header
+          schema:
+            type: string
+        - name: X-VectorDB-Key
+          in: header
+          schema:
+            type: string
+        - name: X-EmbeddingAPI-Key
+          in: header
+          schema:
+            type: string
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json: {}
+  /s3:
+    post:
+      tags:
+        - General
+      summary: s3
+      description: Allows you passed a signed s3 url and generate an embedding
+      requestBody:
+        content:
+          '*/*':
+            schema:
+              type: string
+              example: >-
+                "{\n\t\"VectorDBMetadata\": {},\n\t\"EmbeddingsMetadata\":
+                {},\n\t\"PreSignedURL\": \"binary file string\"\n}"
+      parameters:
+        - name: Authorization
+          in: header
+          schema:
+            type: string
+        - name: X-VectorDB-Key
+          in: header
+          schema:
+            type: string
+        - name: X-EmbeddingAPI-Key
+          in: header
+          schema:
+            type: string
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json: {}
