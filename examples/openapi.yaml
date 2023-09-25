@@ -3,7 +3,7 @@ info:
   title: dev-docs
   version: 1.0.0
 servers:
-  - url: http://localhost:3000
+  - url: http://localhost:8000
 paths:
   /embed:
     post:
@@ -13,30 +13,53 @@ paths:
       description: Embeds
       requestBody:
         content:
-          '*/*':
+          application/json:
             schema:
-              type: string
-              example: >-
-                "{\n\t\"VectorDBMetadata\": {},\n\t\"EmbeddingsMetadata\":
-                {},\n\t\"SourceData\": \"binary file string\"\n}"
+              type: object
+              properties:
+                VectorDBMetadata:
+                  type: object
+                  description: Metadata related to Vector DB
+                  properties: {} # Define properties for VectorDBMetadata if available
+                EmbeddingsMetadata:
+                  type: object
+                  description: Metadata related to Embeddings
+                  properties: {} # Define properties for EmbeddingsMetadata if available
+                SourceData:
+                  type: string
+                  description: Binary file string
+                  format: binary
+            example:
+              VectorDBMetadata: {}
+              EmbeddingsMetadata: {}
+              SourceData: "binary file string"
       parameters:
         - name: Authorization
           in: header
+          required: true
           schema:
             type: string
         - name: X-VectorDB-Key
           in: header
+          required: true
           schema:
             type: string
         - name: X-EmbeddingAPI-Key
           in: header
+          required: true
           schema:
             type: string
       responses:
         '200':
           description: Successful response
           content:
-            application/json: {}
+            application/json:
+              schema:
+                type: object
+                properties:
+                  message:
+                    type: string
+
   /s3:
     post:
       tags:
@@ -45,27 +68,48 @@ paths:
       description: Allows you passed a signed s3 url and generate an embedding
       requestBody:
         content:
-          '*/*':
+          application/json:
             schema:
-              type: string
-              example: >-
-                "{\n\t\"VectorDBMetadata\": {},\n\t\"EmbeddingsMetadata\":
-                {},\n\t\"PreSignedURL\": \"binary file string\"\n}"
+              type: object
+              properties:
+                VectorDBMetadata:
+                  type: object
+                  description: Metadata related to Vector DB
+                  properties: {} # Define properties for VectorDBMetadata if available
+                EmbeddingsMetadata:
+                  type: object
+                  description: Metadata related to Embeddings
+                  properties: {} # Define properties for EmbeddingsMetadata if available
+                PreSignedURL:
+                  type: string
+                  description: Pre-signed URL for S3
+            example:
+              VectorDBMetadata: {}
+              EmbeddingsMetadata: {}
+              PreSignedURL: "https://s3.example.com/pre-signed-url"
       parameters:
         - name: Authorization
           in: header
+          required: true
           schema:
             type: string
         - name: X-VectorDB-Key
           in: header
+          required: true
           schema:
             type: string
         - name: X-EmbeddingAPI-Key
           in: header
+          required: true
           schema:
             type: string
       responses:
         '200':
           description: Successful response
           content:
-            application/json: {}
+            application/json:
+              schema:
+                type: object
+                properties:
+                  message:
+                    type: string

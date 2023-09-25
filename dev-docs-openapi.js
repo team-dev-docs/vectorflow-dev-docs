@@ -1,7 +1,7 @@
 const apiConfig = {
     "openapi": {
         "specPath": "examples/openapi.yaml",
-        "outputDir": "docs/api/openapi"
+        "outputDir": "docs/api"
     }
 }
 
