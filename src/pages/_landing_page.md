@@ -1,7 +1,7 @@
 ````markdown 
 ++{card style="background: url('/img/dev-docs-assets/dev-docs-RnJpLCAyMiBTZXAgMjAyMyAxMjozNDoxMyBHTVQ=.png') no-repeat center center / cover;" class="background-landing"}++
 
-# ++{style=" font-size: 120px"} Vectorflow Docs
+# ++{style=" font-size: 120px;"} Vectorflow Docs
 
 ## ++{style="text-align: center; "} We provide robust, scalable, and secure vector embedding services for AI companies. Focus on your core business logic and let us handle the data ingestion.
 
