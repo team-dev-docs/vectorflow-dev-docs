@@ -3,7 +3,7 @@ import React, { useRef, useState } from 'react';
 
 const ClipboardIcon = () => (
   <svg
-    class="copyButtonIcon_node_modules-@docusaurus-theme-classic-lib-theme-CodeBlock-CopyButton-styles-module"
+    class="copy-svg copyButtonIcon_node_modules-@docusaurus-theme-classic-lib-theme-CodeBlock-CopyButton-styles-module"
     width="16"
     height="16"
     viewBox="0 0 24 24"
