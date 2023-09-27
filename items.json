@@ -5,12 +5,6 @@
             "label": "Get Started",
             "prependBaseUrlToHref": true,
             "href": "/docs/"
-        },
-        {
-            "label": "Blogs",
-            "position": "left",
-            "prependBaseUrlToHref": true,
-            "href": "/blog"
         }
     ]
 }
