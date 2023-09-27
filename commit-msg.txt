@@ -1,1 +1,2 @@
-added footerItems.json
+fixes api button
+
