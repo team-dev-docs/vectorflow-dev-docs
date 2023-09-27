@@ -1,1 +1,1 @@
-added items.json
+added footerItems.json
