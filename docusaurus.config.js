@@ -106,9 +106,9 @@ const config = {
         },
       ],
       navbar: {
-        title: 'Dev-Docs',
+        title: 'Vectorflow',
         logo: {
-          alt: 'My Site Logo',
+          alt: 'Vectorflow',
           src: logoJson.logo || "",
         },
         items: [

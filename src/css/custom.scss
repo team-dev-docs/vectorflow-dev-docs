@@ -939,21 +939,13 @@ ul[data-type="taskList"] {
   transform: translateX(400px);
 }
 
-// .toggle-button {
-//   position: fixed;
-//   bottom: 20px;
-//   right: 20px;
-//   margin: 0 auto;
-//   width: 100px;
-//   height: 40px;
-//   background-color: #55c57a;
-//   color: white;
-//   border: none;
-//   border-radius: 20px;
-//   font-size: 14px;
-//   cursor: pointer;
-//   outline: none;
-// }
+.details__request-summary {
+  button {
+    display: none;
+  }
+}
+
+
 
 .toggle-button {
   width: 100%;
