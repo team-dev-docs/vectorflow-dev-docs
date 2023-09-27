@@ -189,7 +189,7 @@ const NodeView = (props) => {
       }}
       className={classes}
     >
-      <NodeViewContent style={{ styledItems }} className="content butts" />
+      <NodeViewContent style={{ styledItems }} className="content" />
     </NodeViewWrapper>
   );
 };
