@@ -121,7 +121,7 @@ const config = {
       footer: {
         style: 'dark',
         links: [...footerItems.links],
-        copyright: `${new Date().getFullYear()} Dev-Docs`,
+        copyright: `<span style="margin-top: 4em;">Powered by <a href="https://dev-docs.dev">Dev-Docs</a>, Docusaurus Docs made awesome and easy</span>`,
       },
       prism: {
         theme: lightCodeTheme,
