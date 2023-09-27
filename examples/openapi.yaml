@@ -113,3 +113,59 @@ paths:
                 properties:
                   message:
                     type: string
+
+  /images:
+    post:
+      tags:
+        - General
+      summary: Image Embeddings
+      description: "Send a POST request to the /images endpoint to utilize this capability. You pass the same set of fields in VectorDBMetadata as you would for the /embed or /s3 endpoints but for EmbeddingsMetadata you only need to pass \"embeddings_type\": \"IMAGE\"."
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                VectorDBMetadata:
+                  type: object
+                  description: Metadata related to Vector DB
+                  properties: {} # Define properties for VectorDBMetadata if available
+                EmbeddingsMetadata:
+                  type: object
+                  description: Metadata related to Embeddings
+                  properties:
+                    embeddings_type:
+                      type: string
+                      enum: ["IMAGE"]
+                      description: Type of embeddings for images
+            example:
+              VectorDBMetadata: {}
+              EmbeddingsMetadata:
+                embeddings_type: "IMAGE"
+              SourceData: "binary file string"
+      parameters:
+        - name: Authorization
+          in: header
+          required: true
+          schema:
+            type: string
+        - name: X-VectorDB-Key
+          in: header
+          required: true
+          schema:
+            type: string
+        - name: X-EmbeddingAPI-Key
+          in: header
+          required: true
+          schema:
+            type: string
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  message:
+                    type: string

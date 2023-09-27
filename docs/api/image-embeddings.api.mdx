@@ -1,0 +1,42 @@
+---
+id: image-embeddings
+title: "Image Embeddings"
+description: "Send a POST request to the /images endpoint to utilize this capability. You pass the same set of fields in VectorDBMetadata as you would for the /embed or /s3 endpoints but for EmbeddingsMetadata you only need to pass 'embeddings_type': 'IMAGE'."
+sidebar_label: "Image Embeddings"
+hide_title: true
+hide_table_of_contents: true
+api: {"tags":["General"],"description":"Send a POST request to the /images endpoint to utilize this capability. You pass the same set of fields in VectorDBMetadata as you would for the /embed or /s3 endpoints but for EmbeddingsMetadata you only need to pass \"embeddings_type\": \"IMAGE\".","requestBody":{"content":{"application/json":{"schema":{"type":"object","properties":{"VectorDBMetadata":{"type":"object","description":"Metadata related to Vector DB","properties":{}},"EmbeddingsMetadata":{"type":"object","description":"Metadata related to Embeddings","properties":{"embeddings_type":{"type":"string","enum":["IMAGE"],"description":"Type of embeddings for images"}}}}},"example":{"VectorDBMetadata":{},"EmbeddingsMetadata":{"embeddings_type":"IMAGE"},"SourceData":"binary file string"}}}},"parameters":[{"name":"Authorization","in":"header","required":true,"schema":{"type":"string"}},{"name":"X-VectorDB-Key","in":"header","required":true,"schema":{"type":"string"}},{"name":"X-EmbeddingAPI-Key","in":"header","required":true,"schema":{"type":"string"}}],"responses":{"200":{"description":"Successful response","content":{"application/json":{"schema":{"type":"object","properties":{"message":{"type":"string"}}}}}}},"method":"post","path":"/images","servers":[{"url":"http://localhost:8000"}],"jsonRequestBodyExample":{"VectorDBMetadata":{},"EmbeddingsMetadata":{"embeddings_type":"IMAGE"}},"info":{"title":"dev-docs","version":"1.0.0"},"postman":{"name":"Image Embeddings","description":{"content":"Send a POST request to the /images endpoint to utilize this capability. You pass the same set of fields in VectorDBMetadata as you would for the /embed or /s3 endpoints but for EmbeddingsMetadata you only need to pass \"embeddings_type\": \"IMAGE\".","type":"text/plain"},"url":{"path":["images"],"host":["{{baseUrl}}"],"query":[],"variable":[]},"header":[{"disabled":false,"description":{"content":"(Required) ","type":"text/plain"},"key":"X-VectorDB-Key","value":""},{"disabled":false,"description":{"content":"(Required) ","type":"text/plain"},"key":"X-EmbeddingAPI-Key","value":""},{"key":"Content-Type","value":"application/json"},{"key":"Accept","value":"application/json"}],"method":"POST","body":{"mode":"raw","raw":"\"\"","options":{"raw":{"language":"json"}}}}}
+sidebar_class_name: "post api-method"
+info_path: docs/api/dev-docs
+custom_edit_url: null
+---
+
+import ApiTabs from "@theme/ApiTabs";
+import MimeTabs from "@theme/MimeTabs";
+import ParamsItem from "@theme/ParamsItem";
+import ResponseSamples from "@theme/ResponseSamples";
+import SchemaItem from "@theme/SchemaItem";
+import SchemaTabs from "@theme/SchemaTabs";
+import DiscriminatorTabs from "@theme/DiscriminatorTabs";
+import TabItem from "@theme/TabItem";
+
+## Image Embeddings
+
+
+
+Send a POST request to the /images endpoint to utilize this capability. You pass the same set of fields in VectorDBMetadata as you would for the /embed or /s3 endpoints but for EmbeddingsMetadata you only need to pass "embeddings_type": "IMAGE".
+
+<details style={{"marginBottom":"1rem"}} data-collapsed={false} open={true}><summary style={{}}><strong>Header Parameters</strong></summary><div><ul><ParamsItem className={"paramsItem"} param={{"name":"Authorization","in":"header","required":true,"schema":{"type":"string"}}}></ParamsItem><ParamsItem className={"paramsItem"} param={{"name":"X-VectorDB-Key","in":"header","required":true,"schema":{"type":"string"}}}></ParamsItem><ParamsItem className={"paramsItem"} param={{"name":"X-EmbeddingAPI-Key","in":"header","required":true,"schema":{"type":"string"}}}></ParamsItem></ul></div></details><MimeTabs><TabItem label={"application/json"} value={"application/json-schema"}><details style={{}} data-collapsed={false} open={true}><summary style={{"textAlign":"left"}}><strong>Request Body</strong></summary><div style={{"textAlign":"left","marginLeft":"1rem"}}></div><ul style={{"marginLeft":"1rem"}}><SchemaItem collapsible={true} className={"schemaItem"}><details style={{}}><summary style={{}}><strong>VectorDBMetadata</strong><span style={{"opacity":"0.6"}}> object</span></summary><div style={{"marginLeft":"1rem"}}><div style={{"marginTop":".5rem","marginBottom":".5rem"}}>
+
+Metadata related to Vector DB
+
+</div></div></details></SchemaItem><SchemaItem collapsible={true} className={"schemaItem"}><details style={{}}><summary style={{}}><strong>EmbeddingsMetadata</strong><span style={{"opacity":"0.6"}}> object</span></summary><div style={{"marginLeft":"1rem"}}><div style={{"marginTop":".5rem","marginBottom":".5rem"}}>
+
+Metadata related to Embeddings
+
+</div><SchemaItem collapsible={false} name={"embeddings_type"} required={false} schemaName={"string"} qualifierMessage={"**Possible values:** [`IMAGE`]"} schema={{"type":"string","enum":["IMAGE"],"description":"Type of embeddings for images"}}></SchemaItem></div></details></SchemaItem></ul></details></TabItem></MimeTabs><div><ApiTabs><TabItem label={"200"} value={"200"}><div>
+
+Successful response
+
+</div><div><MimeTabs schemaType={"response"}><TabItem label={"application/json"} value={"application/json"}><SchemaTabs><TabItem label={"Schema"} value={"Schema"}><details style={{}} data-collapsed={false} open={true}><summary style={{"textAlign":"left"}}><strong>Schema</strong></summary><div style={{"textAlign":"left","marginLeft":"1rem"}}></div><ul style={{"marginLeft":"1rem"}}><SchemaItem collapsible={false} name={"message"} required={false} schemaName={"string"} qualifierMessage={undefined} schema={{"type":"string"}}></SchemaItem></ul></details></TabItem><TabItem label={"Example (from schema)"} value={"Example (from schema)"}><ResponseSamples responseExample={"{\n  \"message\": \"string\"\n}"} language={"json"}></ResponseSamples></TabItem></SchemaTabs></TabItem></MimeTabs></div></TabItem></ApiTabs></div>
+      
