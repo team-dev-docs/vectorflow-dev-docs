@@ -1,2 +1,1 @@
-fix class typo
-
+added chat.json
