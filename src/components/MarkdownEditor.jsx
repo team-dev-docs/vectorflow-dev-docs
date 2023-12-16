@@ -1,4 +1,4 @@
-import { EditorContent, useEditor, ReactNodeViewRenderer } from "@tiptap/react";
+import { EditorContent, useEditor } from "@tiptap/react";
 import { ColumnExtension } from "@gocapsule/column-extension";
 import StarterKit from "@tiptap/starter-kit";
 import ResizableImage from "./ResizableImage";
@@ -30,7 +30,6 @@ import { lowlight } from 'lowlight'
 import Accordion from "./Accordion";
 import Tabs from "./Tabs";
 import Heading from "@tiptap/extension-heading"
-import CodeBlockComponent from './CustomCodeLowlight.jsx'
 
 const HeadingWithID = Heading.extend({
   addAttributes() {
@@ -191,13 +190,9 @@ export default ({ data }) => {
   const editor = useEditor({
     editable: false,
     extensions: [
-      CodeBlockLowlight
-      .extend({
-        addNodeView() {
-          return ReactNodeViewRenderer(CodeBlockComponent)
-        },
-      })
-      .configure({ lowlight }),
+      CodeBlockLowlight.configure({
+        lowlight,
+      }),
       StarterKit,
       TaskItem,
       TaskList,

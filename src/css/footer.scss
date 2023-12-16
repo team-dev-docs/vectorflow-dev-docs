@@ -1,7 +1,7 @@
 [data-theme="dark"] .footer--dark {
   backdrop-filter: blur(16px) saturate(180%);
   -webkit-backdrop-filter: blur(16px) saturate(180%);
-  background: #090d14;
+  background-color: transparent;
   border: none;
 }
 
@@ -9,7 +9,7 @@
   color: #0d0d0d;
   backdrop-filter: blur(16px) saturate(180%);
   -webkit-backdrop-filter: blur(16px) saturate(180%);
-  background-color: rgba(255, 255, 255, 0.94);
+  background-color: transparent;
   border: none;
   .footer__title,
   .footer__link-item {
@@ -54,3 +54,12 @@
   line-height: 1.3375rem; /* 133.75% */
   letter-spacing: -0.005rem;
 }
+
+
+// .footer__links {
+//   @media (min-width: 1400px) {
+//     padding-left: 12em;
+//     padding-right: 12em;
+//   }
+//   /* Styles for elements with a class that starts with "word" */
+// }

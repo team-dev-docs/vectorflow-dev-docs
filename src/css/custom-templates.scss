@@ -413,11 +413,6 @@ button:after {
     justify-content: center;
     align-items: center;
     opacity: 0.8;
-    max-width: 100%;
-    overflow: hidden;
-    text-overflow: ellipsis;
-    white-space: nowrap;
-    
     > h1,
     h2,
     h3,
@@ -428,19 +423,6 @@ button:after {
       padding-right: 0em;
       letter-spacing: -1.6px;
     }
-
-    h1 {
-      span {
-        font-size: min(18vw, 120px) !important;
-      }
-    }
-
-    h2 {
-      span {
-        font-size: min(8vw, 25px) !important;
-      }
-    }
-
     .content {
       height: 100%;
       display: flex !important;
@@ -500,10 +482,6 @@ button:after {
   }
 }
 
-#__docusaurus {
-  max-width: 100vw !important;
-  overflow-x: hidden;
-}
 
 .ProseMirror {
   > * + * {
