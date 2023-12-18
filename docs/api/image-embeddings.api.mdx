@@ -11,6 +11,8 @@ info_path: docs/api/vectorflow
 custom_edit_url: null
 ---
 
+
+
 import ApiTabs from "@theme/ApiTabs";
 import DiscriminatorTabs from "@theme/DiscriminatorTabs";
 import MethodEndpoint from "@theme/ApiExplorer/MethodEndpoint";
@@ -20,29 +22,24 @@ import ParamsItem from "@theme/ParamsItem";
 import ResponseSamples from "@theme/ResponseSamples";
 import SchemaItem from "@theme/SchemaItem";
 import SchemaTabs from "@theme/SchemaTabs";
-import TabItem from "@theme/TabItem";
 
-<h1 className={"openapi__heading"}>Image Embeddings</h1>
+import JsonToTable from '@site/src/components/JsonToTable';
+import BodyTable from '@site/src/components/BodyTable';
+import QueryTable from '@site/src/components/QueryTable';
+import HeadersTable from '@site/src/components/HeadersTable';
+import DisplayJson from '@site/src/components/DisplayJson';
+import DisplayEndpoint from '@site/src/components/DisplayEndpoint';
 
-<MethodEndpoint method={"post"} path={"/images"}></MethodEndpoint>
+# Image Embeddings
+
+Send a POST request to the /images endpoint to utilize this capability. You pass the same set of fields in VectorDBMetadata as you would for the /embed or /s3 endpoints but for EmbeddingsMetadata you only need to pass 'embeddings_type': 'IMAGE'.
+
+<DisplayEndpoint method="post" endpoint="/images"/>
+<QueryTable title="query" data="e30=" />
+<HeadersTable title="headers" data="eyJYLVZlY3RvckRCLUtleSI6eyJkaXNhYmxlZCI6ZmFsc2UsImRlc2NyaXB0aW9uIjoiKFJlcXVpcmVkKSAiLCJrZXkiOiJYLVZlY3RvckRCLUtleSIsInZhbHVlIjoiPHN0cmluZz4ifSwiWC1FbWJlZGRpbmdBUEktS2V5Ijp7ImRpc2FibGVkIjpmYWxzZSwiZGVzY3JpcHRpb24iOiIoUmVxdWlyZWQpICIsImtleSI6IlgtRW1iZWRkaW5nQVBJLUtleSIsInZhbHVlIjoiPHN0cmluZz4ifSwiQ29udGVudC1UeXBlIjp7ImtleSI6IkNvbnRlbnQtVHlwZSIsInZhbHVlIjoiYXBwbGljYXRpb24vanNvbiJ9LCJBY2NlcHQiOnsia2V5IjoiQWNjZXB0IiwidmFsdWUiOiJhcHBsaWNhdGlvbi9qc29uIn19" />
+<BodyTable title="body" data="eyJFbWJlZGRpbmdzTWV0YWRhdGEiOnsidHlwZSI6IjxzdHJpbmc+IiwiZGVzY3JpcHRpb24iOiJNZXRhZGF0YSByZWxhdGVkIHRvIEVtYmVkZGluZ3MiLCJwcm9wZXJ0aWVzIjp7ImVtYmVkZGluZ3NfdHlwZSI6eyJ0eXBlIjoic3RyaW5nIiwiZW51bSI6WyJJTUFHRSJdLCJkZXNjcmlwdGlvbiI6IlR5cGUgb2YgZW1iZWRkaW5ncyBmb3IgaW1hZ2VzIn19fSwiVmVjdG9yREJNZXRhZGF0YSI6eyJkZXNjcmlwdGlvbiI6Ik1ldGFkYXRhIHJlbGF0ZWQgdG8gVmVjdG9yIERCIiwicHJvcGVydGllcyI6e319fQ==" />
+<DisplayJson title="Whole Request" data="eyJjb250ZW50Ijp7ImFwcGxpY2F0aW9uL2pzb24iOnsic2NoZW1hIjp7InR5cGUiOiJvYmplY3QiLCJwcm9wZXJ0aWVzIjp7IlZlY3RvckRCTWV0YWRhdGEiOnsidHlwZSI6Im9iamVjdCIsImRlc2NyaXB0aW9uIjoiTWV0YWRhdGEgcmVsYXRlZCB0byBWZWN0b3IgREIiLCJwcm9wZXJ0aWVzIjp7fX0sIkVtYmVkZGluZ3NNZXRhZGF0YSI6eyJ0eXBlIjoib2JqZWN0IiwiZGVzY3JpcHRpb24iOiJNZXRhZGF0YSByZWxhdGVkIHRvIEVtYmVkZGluZ3MiLCJwcm9wZXJ0aWVzIjp7ImVtYmVkZGluZ3NfdHlwZSI6eyJ0eXBlIjoic3RyaW5nIiwiZW51bSI6WyJJTUFHRSJdLCJkZXNjcmlwdGlvbiI6IlR5cGUgb2YgZW1iZWRkaW5ncyBmb3IgaW1hZ2VzIn19fX19LCJleGFtcGxlIjp7IlZlY3RvckRCTWV0YWRhdGEiOnt9LCJFbWJlZGRpbmdzTWV0YWRhdGEiOnsiZW1iZWRkaW5nc190eXBlIjoiSU1BR0UifSwiU291cmNlRGF0YSI6ImJpbmFyeSBmaWxlIHN0cmluZyJ9fX19" />             
 
 
-
-Send a POST request to the /images endpoint to utilize this capability. You pass the same set of fields in VectorDBMetadata as you would for the /embed or /s3 endpoints but for EmbeddingsMetadata you only need to pass "embeddings_type": "IMAGE".
-
-## Request
-
-<details style={{"marginBottom":"1rem"}} className={"openapi-markdown__details"} data-collapsed={false} open={true}><summary style={{}}><h3 className={"openapi-markdown__details-summary-header-params"}>Header Parameters</h3></summary><div><ul><ParamsItem className={"paramsItem"} param={{"name":"Authorization","in":"header","required":true,"schema":{"type":"string"}}}></ParamsItem><ParamsItem className={"paramsItem"} param={{"name":"X-VectorDB-Key","in":"header","required":true,"schema":{"type":"string"}}}></ParamsItem><ParamsItem className={"paramsItem"} param={{"name":"X-EmbeddingAPI-Key","in":"header","required":true,"schema":{"type":"string"}}}></ParamsItem></ul></div></details><MimeTabs className={"openapi-tabs__mime"}><TabItem label={"application/json"} value={"application/json-schema"}><details style={{}} className={"openapi-markdown__details mime"} data-collapsed={false} open={true}><summary style={{}} className={"openapi-markdown__details-summary-mime"}><h3 className={"openapi-markdown__details-summary-header-body"}>Body</h3></summary><div style={{"textAlign":"left","marginLeft":"1rem"}}></div><ul style={{"marginLeft":"1rem"}}><SchemaItem collapsible={true} className={"schemaItem"}><details style={{}} className={"openapi-markdown__details"}><summary style={{}}><span className={"openapi-schema__container"}><strong className={"openapi-schema__property"}>VectorDBMetadata</strong><span className={"openapi-schema__name"}> object</span></span></summary><div style={{"marginLeft":"1rem"}}><div style={{"marginTop":".5rem","marginBottom":".5rem"}}>
-
-Metadata related to Vector DB
-
-</div></div></details></SchemaItem><SchemaItem collapsible={true} className={"schemaItem"}><details style={{}} className={"openapi-markdown__details"}><summary style={{}}><span className={"openapi-schema__container"}><strong className={"openapi-schema__property"}>EmbeddingsMetadata</strong><span className={"openapi-schema__name"}> object</span></span></summary><div style={{"marginLeft":"1rem"}}><div style={{"marginTop":".5rem","marginBottom":".5rem"}}>
-
-Metadata related to Embeddings
-
-</div><SchemaItem collapsible={false} name={"embeddings_type"} required={false} schemaName={"string"} qualifierMessage={"**Possible values:** [`IMAGE`]"} schema={{"type":"string","enum":["IMAGE"],"description":"Type of embeddings for images"}}></SchemaItem></div></details></SchemaItem></ul></details></TabItem></MimeTabs><div><div><ApiTabs><TabItem label={"200"} value={"200"}><div>
-
-Successful response
-
-</div><div><MimeTabs className={"openapi-tabs__mime"} schemaType={"response"}><TabItem label={"application/json"} value={"application/json"}><SchemaTabs className={"openapi-tabs__schema"}><TabItem label={"Schema"} value={"Schema"}><details style={{}} className={"openapi-markdown__details response"} data-collapsed={false} open={true}><summary style={{}} className={"openapi-markdown__details-summary-response"}><strong>Schema</strong></summary><div style={{"textAlign":"left","marginLeft":"1rem"}}></div><ul style={{"marginLeft":"1rem"}}><SchemaItem collapsible={false} name={"message"} required={false} schemaName={"string"} qualifierMessage={undefined} schema={{"type":"string"}}></SchemaItem></ul></details></TabItem><TabItem label={"Example (from schema)"} value={"Example (from schema)"}><ResponseSamples responseExample={"{\n  \"message\": \"string\"\n}"} language={"json"}></ResponseSamples></TabItem></SchemaTabs></TabItem></MimeTabs></div></TabItem></ApiTabs></div></div>
+   
       

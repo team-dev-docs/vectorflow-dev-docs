@@ -16,10 +16,20 @@ import {
   AccordionTrigger,
 } from "./ui/accordion";
 
+import { unified } from 'unified';
+import markdown from 'remark-parse';
+import remark2rehype from 'remark-rehype';
+import rehype2react from 'rehype-react';
+
+const processor = unified()
+  .use(markdown)
+  .use(remark2rehype)
+  .use(rehype2react, { createElement: React.createElement });
+
 // import { Button } from "@/components/ui/button"
 
-
-const JsonToTable = ({ data, title }) => {
+// need a place to put 
+const JsonToTable = ({ data, title, columns }) => {
   const [decodedData, setDecodedData] = useState({});
 
   useEffect(() => {
@@ -27,6 +37,7 @@ const JsonToTable = ({ data, title }) => {
       try {
         const decoded64JSON = atob(data);
         const decodedJSON = JSON.parse(decoded64JSON);
+        console.log("this is the new decoded body", decoded64JSON)
         setDecodedData(decodedJSON);
       } catch (error) {
         console.error('Error parsing JSON:', error);
@@ -39,20 +50,31 @@ const JsonToTable = ({ data, title }) => {
 
     const nestedTables = [];
 
-    const tableRows = Object.entries(json).map(([key, value]) => {
+    const iteratedTableRows = Object.entries(json).map(([key, value]) => {
       if (typeof value === 'object') {
         // Render nested objects as separate tables
         nestedTables.push(renderTable(value, key));
         return null; // Skip rendering this row in the current table
       } else {
+        let markdownResult = processor.processSync(value).result
+        console.log("markdown result", markdownResult)
         return (
           <TableRow key={key}>
-            <TableCell className="font-medium">{key}</TableCell>
-            <TableCell>{value}</TableCell>
+            <TableCell className="font-medium">
+              <h3>{key}</h3>
+              <br></br>
+              {markdownResult}
+              <br></br>
+              <p>Other Text that is important</p>
+            </TableCell>
           </TableRow>
         );
       }
     });
+
+    let tableRows = [
+      ...iteratedTableRows
+    ] 
 
     return (
       <Accordion type="single" collapsible className="w-full">
@@ -66,8 +88,8 @@ const JsonToTable = ({ data, title }) => {
         <Table>
           <TableHead>
             <TableRow>
-              <TableHeader>{tableName}</TableHeader>
-              <TableHeader>Value</TableHeader>
+              <TableCell>YO</TableCell>
+              <TableCell>Value</TableCell>
             </TableRow>
           </TableHead>
           <TableBody>{tableRows}</TableBody>
